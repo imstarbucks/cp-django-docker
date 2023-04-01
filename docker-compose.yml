@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   frontend:
@@ -9,52 +9,51 @@ services:
     volumes:
       - ./frontend:/app
       - node-modules:/app/node_modules
+    restart: always
     ports:
       - '3000:3000'
     environment:
       - NODE_ENV=development
     command: npm run dev
-    networks:
-      - dev
 
   backend:
     container_name: "backend-dev"
     build:
       context: ./backend
       dockerfile: Dockerfile
-    command: gunicorn core.wsgi --bind 0.0.0.0:8000
+    restart: always
     ports:
       - '8000:8000'
-    networks:
-      - dev
+    entrypoint: /entrypoint.sh
+    command: python manage.py runserver
+    volumes:
+      - static:/backend/static
+      - ./backend:/backend
+    depends_on:
+      - db
+      - nginx
 
   db:
-    container_name: database
-    image: postgres
-    restart: always
-    volumes: ./data/:/var/lib/postgresql/data
+    container_name: "db-dev"
+    image: postgres:13.0-alpine
+    volumes:
+      - ./db_data/:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: test_db
-    ports:
-      - "5432:5432"
-    networks:
-      - dev
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
-  pgadmin:
-    container_name: pgadmin14
-    image: dpage/pgadmin4
+  nginx:
+    container_name: "nginx-dev"
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
     restart: always
-    volumes: ./data/pgadmin-data:/var/lib/pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: root@root.com
-      PGADMIN_DEFAULT_PASSWORD: root
+    volumes:
+      - static:/static
     ports:
-      8080:80
+      - "80:80"
 
 volumes:
+  static:
   node-modules:
-
-networks:
-  dev:
