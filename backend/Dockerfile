@@ -10,5 +10,6 @@ RUN pipenv requirements > requirements.txt
 RUN pip install -r requirements.txt
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+RUN ./entrypoint.sh
 
 COPY . /backend/
