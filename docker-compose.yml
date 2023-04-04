@@ -31,7 +31,6 @@ services:
       - ./backend:/backend
     depends_on:
       - db
-      - nginx
 
   db:
     container_name: "db-dev"
@@ -53,6 +52,8 @@ services:
       - static:/static
     ports:
       - "80:80"
+    depends_on:
+      - backend
 
 volumes:
   static:

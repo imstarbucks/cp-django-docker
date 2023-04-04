@@ -4,6 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 WORKDIR /backend
 
 RUN pip install pipenv
+RUN pip install psycopg2
 COPY Pipfile* /backend/
 RUN pipenv requirements > requirements.txt
 RUN pip install -r requirements.txt

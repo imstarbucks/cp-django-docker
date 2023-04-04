@@ -1,4 +1,8 @@
-asgiref==3.6.0
-Django==4.1.5
-sqlparse==0.4.3
-psycopg2>=2.8
+# asgiref==3.6.0
+# Django==4.1.5
+# sqlparse==0.4.3
+# psycopg2-binary==2.9.1  # PostgreSQL database connector
+Django==3.2.8  # Django web framework
+djangorestframework==3.12.4  # Django REST framework for building APIs
+django-cors-headers==3.8.0  # Django middleware for handling cross-origin resource sharing (CORS)
+gunicorn==20.1.0
