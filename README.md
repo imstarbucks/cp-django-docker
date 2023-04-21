@@ -1,7 +1,5 @@
 # Capstone Django-Docker Project Setup Documentation
 
-# Capstone Django-Docker Project Setup Documentation
-
 This document outlines the steps required to set up the Capstone Django-Docker project. The project is composed of the following technologies:
 
 - Django as the backend framework
@@ -20,11 +18,11 @@ Before proceeding with the setup, ensure that you have the following installed o
 ## Getting Started
 
 1. Clone the Capstone Django-Docker project to your local machine.
-    
-    ```
-    git clone https://github.com/imstarbucks/cp-django-docker.git {project_name}
-    ```
-    
+
+   ```
+   git clone https://github.com/imstarbucks/cp-django-docker.git {project_name}
+   ```
+
 2. Navigate to the root directory of the project.
 3. Create a `.env` file in the root directory of the project if it does not exist.
 4. Add the following environment variables to the `.env` file:
@@ -53,13 +51,13 @@ docker-compose up -d
 #  - Use -d flag for detached mode
 #  - It is recommended to use docker compose v2 in this project
 #  - To ensure docker compose v2 is enabled, go to Docker Desktop > Setting >
-#    check docker-compose v2 checkbox   
+#    check docker-compose v2 checkbox
 ```
 
-1. Once the project has started, open your browser and navigate to 
-    1. `[http://localhost:3000](http://localhost:3000)` for front-end
-    2. `[http://localhost:8000](http://localhost:8000)` for django panel
-    3. `[http://localhost:5050](http://localhost:5050)` for pgadmin4 panel
+1. Once the project has started, open your browser and navigate to
+   1. `[http://localhost:3000](http://localhost:3000)` for front-end
+   2. `[http://localhost:8000](http://localhost:8000)` for django panel
+   3. `[http://localhost:5050](http://localhost:5050)` for pgadmin4 panel
 
 ## Reference:
 
