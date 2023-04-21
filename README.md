@@ -27,34 +27,34 @@ Before proceeding with the setup, ensure that you have the following installed o
 3. Create a `.env` file in the root directory of the project if it does not exist.
 4. Add the following environment variables to the `.env` file:
 
-```
-DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
-SQL_ENGINE=django.db.backends.postgresql
-SQL_DATABASE={datebase name}
-SQL_USER={datebase user}
-SQL_PASSWORD={datebase password}
-SQL_HOST=db
-SQL_PORT=5432
+   ```
+   DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+   SQL_ENGINE=django.db.backends.postgresql
+   SQL_DATABASE={datebase name}
+   SQL_USER={datebase user}
+   SQL_PASSWORD={datebase password}
+   SQL_HOST=db
+   SQL_PORT=5432
 
-```
+   ```
 
-1. Run the following command to start the project:
+5. Run the following command to start the project:
 
-```bash
-# For starter run:
-docker-compose up --build -d
+   ```bash
+   # For starter run:
+   docker-compose up --build -d
 
-# For non-starter run:
-docker-compose up -d
+   # For non-starter run:
+   docker-compose up -d
 
-# Note:
-#  - Use -d flag for detached mode
-#  - It is recommended to use docker compose v2 in this project
-#  - To ensure docker compose v2 is enabled, go to Docker Desktop > Setting >
-#    check docker-compose v2 checkbox
-```
+   # Note:
+   #  - Use -d flag for detached mode
+   #  - It is recommended to use docker compose v2 in this project
+   #  - To ensure docker compose v2 is enabled, go to Docker Desktop > Setting >
+   #    check docker-compose v2 checkbox
+   ```
 
-1. Once the project has started, open your browser and navigate to
+6. Once the project has started, open your browser and navigate to
    1. `[http://localhost:3000](http://localhost:3000)` for front-end
    2. `[http://localhost:8000](http://localhost:8000)` for django panel
    3. `[http://localhost:5050](http://localhost:5050)` for pgadmin4 panel
