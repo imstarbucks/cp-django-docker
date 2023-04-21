@@ -6,3 +6,4 @@ Django==3.2.8  # Django web framework
 djangorestframework==3.12.4  # Django REST framework for building APIs
 django-cors-headers==3.8.0  # Django middleware for handling cross-origin resource sharing (CORS)
 gunicorn==20.1.0
+psycopg2-binary==2.9.1
