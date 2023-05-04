@@ -37,6 +37,7 @@ services:
     image: postgres:13.0-alpine
     volumes:
       - ./db_data/:/var/lib/postgresql/data
+    user: '999:999'
     environment:
       - POSTGRES_DB="${SQL_DATABASE}"
       - POSTGRES_USER="${SQL_USER}"
