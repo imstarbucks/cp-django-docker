@@ -36,8 +36,7 @@ services:
     container_name: "db-dev"
     image: postgres:13.0-alpine
     volumes:
-      - ./db_data/:/var/lib/postgresql/data
-    user: '999:999'
+      - postgres-volume:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB="${SQL_DATABASE}"
       - POSTGRES_USER="${SQL_USER}"
@@ -71,3 +70,4 @@ services:
 volumes:
   static:
   node-modules:
+  postgres-volume:
