@@ -28,3 +28,17 @@ frontend/*.local
 *.njsproj
 *.sln
 *.sw?
+backend/env
+
+backend/db.sqlite3
+backend/Pipfile
+backend/Pipfile.lock
+docker-compose.yml
+backend/core/__pycache__/__init__.cpython-311.pyc
+backend/core/__pycache__/urls.cpython-311.pyc
+backend/core/__pycache__/views.cpython-311.pyc
+backend/server/__pycache__/__init__.cpython-311.pyc
+backend/server/__pycache__/settings.cpython-311.pyc
+backend/server/__pycache__/urls.cpython-311.pyc
+backend/server/__pycache__/wsgi.cpython-311.pyc
+backend/db.sqlite3
